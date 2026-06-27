@@ -229,63 +229,63 @@ export default function DashboardOverviewPage() {
       {/* KPI Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         
-        <div className="glass-panel p-4 flex items-center gap-3 border-l-4 border-l-blue-500">
-          <div className="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center">
+        <div className="glass-card p-5 flex items-center gap-4 border-t-2 border-t-blue-500 shadow-md">
+          <div className="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shadow-inner">
             <Users className="w-5 h-5" />
           </div>
           <div>
-            <span className="block text-[9px] uppercase font-bold text-slate-400">Total B2B Accounts</span>
-            <h3 className="text-lg font-black mt-0.5">{kpis.totalCustomers}</h3>
+            <span className="block text-[10px] uppercase font-extrabold tracking-wider text-slate-450 dark:text-slate-400">Total B2B Accounts</span>
+            <h3 className="text-xl font-black mt-0.5 tracking-tight">{kpis.totalCustomers}</h3>
           </div>
         </div>
 
-        <div className="glass-panel p-4 flex items-center gap-3 border-l-4 border-l-amber-500">
-          <div className="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center">
+        <div className="glass-card p-5 flex items-center gap-4 border-t-2 border-t-amber-500 shadow-md">
+          <div className="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center shadow-inner">
             <Clock className="w-5 h-5" />
           </div>
           <div>
-            <span className="block text-[9px] uppercase font-bold text-slate-400">Due Reminders</span>
-            <h3 className="text-lg font-black mt-0.5">{kpis.dueReminders}</h3>
+            <span className="block text-[10px] uppercase font-extrabold tracking-wider text-slate-450 dark:text-slate-400">Due Reminders</span>
+            <h3 className="text-xl font-black mt-0.5 tracking-tight">{kpis.dueReminders}</h3>
           </div>
         </div>
 
-        <div className="glass-panel p-4 flex items-center gap-3 border-l-4 border-l-indigo-500">
-          <div className="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
+        <div className="glass-card p-5 flex items-center gap-4 border-t-2 border-t-indigo-500 shadow-md">
+          <div className="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shadow-inner">
             <ShoppingBag className="w-5 h-5" />
           </div>
           <div>
-            <span className="block text-[9px] uppercase font-bold text-slate-400">Orders Today</span>
-            <h3 className="text-lg font-black mt-0.5">{kpis.ordersToday}</h3>
+            <span className="block text-[10px] uppercase font-extrabold tracking-wider text-slate-450 dark:text-slate-400">Orders Today</span>
+            <h3 className="text-xl font-black mt-0.5 tracking-tight">{kpis.ordersToday}</h3>
           </div>
         </div>
 
-        <div className="glass-panel p-4 flex items-center gap-3 border-l-4 border-l-emerald-500">
-          <div className="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+        <div className="glass-card p-5 flex items-center gap-4 border-t-2 border-t-emerald-500 shadow-md">
+          <div className="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shadow-inner">
             <DollarSign className="w-5 h-5" />
           </div>
           <div className="min-w-0">
-            <span className="block text-[9px] uppercase font-bold text-slate-400">Total Revenue</span>
-            <h3 className="text-base font-black truncate mt-0.5">Rs. {Math.round(kpis.revenue).toLocaleString()}</h3>
+            <span className="block text-[10px] uppercase font-extrabold tracking-wider text-slate-450 dark:text-slate-400">Total Revenue</span>
+            <h3 className="text-base font-black truncate mt-0.5 tracking-tight">Rs. {Math.round(kpis.revenue).toLocaleString()}</h3>
           </div>
         </div>
 
-        <div className="glass-panel p-4 flex items-center gap-3 border-l-4 border-l-rose-500">
-          <div className="w-10 h-10 rounded-lg bg-rose-500/10 text-rose-500 flex items-center justify-center">
+        <div className="glass-card p-5 flex items-center gap-4 border-t-2 border-t-rose-500 shadow-md">
+          <div className="w-11 h-11 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center shadow-inner">
             <AlertCircle className="w-5 h-5" />
           </div>
           <div>
-            <span className="block text-[9px] uppercase font-bold text-slate-400">Urgent Alerts</span>
-            <h3 className="text-lg font-black mt-0.5 text-rose-500">{kpis.pendingFollowups}</h3>
+            <span className="block text-[10px] uppercase font-extrabold tracking-wider text-slate-450 dark:text-slate-400">Urgent Alerts</span>
+            <h3 className="text-xl font-black mt-0.5 tracking-tight text-rose-500">{kpis.pendingFollowups}</h3>
           </div>
         </div>
 
-        <div className="glass-panel p-4 flex items-center gap-3 border-l-4 border-l-teal-500">
-          <div className="w-10 h-10 rounded-lg bg-teal-500/10 text-teal-500 flex items-center justify-center">
+        <div className="glass-card p-5 flex items-center gap-4 border-t-2 border-t-teal-500 shadow-md">
+          <div className="w-11 h-11 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center shadow-inner">
             <CheckCircle className="w-5 h-5" />
           </div>
           <div>
-            <span className="block text-[9px] uppercase font-bold text-slate-400">Completed Reminders</span>
-            <h3 className="text-lg font-black mt-0.5">{kpis.completedReminders}</h3>
+            <span className="block text-[10px] uppercase font-extrabold tracking-wider text-slate-450 dark:text-slate-400">Completed Reminders</span>
+            <h3 className="text-xl font-black mt-0.5 tracking-tight">{kpis.completedReminders}</h3>
           </div>
         </div>
 
@@ -295,7 +295,7 @@ export default function DashboardOverviewPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Monthly Revenue Bar Chart */}
-        <div className="glass-panel p-5 space-y-4">
+        <div className="glass-card p-6 space-y-4 shadow-md">
           <div className="flex items-center justify-between">
             <h3 className="font-bold text-xs uppercase tracking-wider text-slate-400">Monthly Sales (INR)</h3>
             <DollarSign className="w-4 h-4 text-slate-400" />
@@ -306,7 +306,7 @@ export default function DashboardOverviewPage() {
         </div>
 
         {/* Repeat Order Trend */}
-        <div className="glass-panel p-5 space-y-4">
+        <div className="glass-card p-6 space-y-4 shadow-md">
           <div className="flex items-center justify-between">
             <h3 className="font-bold text-xs uppercase tracking-wider text-slate-400">Repeat Order Retention Rate</h3>
             <TrendingUp className="w-4 h-4 text-slate-400" />
@@ -317,7 +317,7 @@ export default function DashboardOverviewPage() {
         </div>
 
         {/* Reminder Success rates */}
-        <div className="glass-panel p-5 flex flex-col justify-between">
+        <div className="glass-card p-6 flex flex-col justify-between shadow-md">
           <div>
             <h3 className="font-bold text-xs uppercase tracking-wider text-slate-400 mb-4">Reminder Status Distribution</h3>
             <div className="h-44 relative flex items-center justify-center">
@@ -351,23 +351,26 @@ export default function DashboardOverviewPage() {
       </div>
 
       {/* Core Interactive Reminders Table */}
-      <div className="glass-panel p-6 space-y-4">
+      <div className="glass-card p-6.5 space-y-6 shadow-md border-t border-slate-200/20 dark:border-slate-800/20">
         
         {/* Table Filters Top */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <h3 className="font-display font-black text-sm">Replenishment Priority Queue</h3>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-4 bg-blue-600 rounded-sm" />
+            <h3 className="font-display font-black text-sm tracking-wide">Replenishment Priority Queue</h3>
+          </div>
           
           <div className="flex flex-wrap items-center gap-3">
             
             {/* Search Input */}
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <input
                 type="text"
                 placeholder="Search Account / Product..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-9 pr-4 py-2 bg-slate-200/20 dark:bg-slate-900/30 border border-slate-200/30 dark:border-slate-800/30 rounded-xl text-xs w-48 focus:w-60 focus:outline-none transition-all"
+                className="pl-9.5 pr-4 py-2 glass-input text-xs w-48 focus:w-60 focus:outline-none transition-all"
               />
             </div>
 
@@ -375,7 +378,7 @@ export default function DashboardOverviewPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-3 py-2 bg-slate-200/20 dark:bg-slate-900/30 border border-slate-200/30 dark:border-slate-800/30 rounded-xl text-xs outline-none focus:border-blue-500"
+              className="px-3.5 py-2.5 glass-input text-xs outline-none cursor-pointer focus:border-blue-500"
             >
               <option value="">All Statuses</option>
               <option value="Pending">Pending</option>
@@ -388,7 +391,7 @@ export default function DashboardOverviewPage() {
             <select
               value={priorityFilter}
               onChange={(e) => setPriorityFilter(e.target.value)}
-              className="px-3 py-2 bg-slate-200/20 dark:bg-slate-900/30 border border-slate-200/30 dark:border-slate-800/30 rounded-xl text-xs outline-none focus:border-blue-500"
+              className="px-3.5 py-2.5 glass-input text-xs outline-none cursor-pointer focus:border-blue-500"
             >
               <option value="">All Priorities</option>
               <option value="Urgent">Urgent</option>
@@ -417,16 +420,16 @@ export default function DashboardOverviewPage() {
               {paginatedReminders.map((rem) => {
                 
                 // Priority color badges
-                let priorityColor = 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20';
-                if (rem.customer_priority === 'Urgent') priorityColor = 'bg-rose-500/10 text-rose-500 border-rose-500/20';
-                if (rem.customer_priority === 'Predicted') priorityColor = 'bg-amber-500/10 text-amber-500 border-amber-500/20';
+                let priorityClass = 'badge-stable';
+                if (rem.customer_priority === 'Urgent') priorityClass = 'badge-urgent';
+                if (rem.customer_priority === 'Predicted') priorityClass = 'badge-predicted';
                 
                 // Status color badges
-                let statusColor = 'bg-slate-500/10 text-slate-500 border-slate-500/20';
-                if (rem.status === 'Completed') statusColor = 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30';
-                if (rem.status === 'Pending') statusColor = 'bg-amber-500/20 text-amber-400 border-amber-500/30';
-                if (rem.status === 'Sent') statusColor = 'bg-blue-500/20 text-blue-400 border-blue-500/30';
-                if (rem.status === 'Failed') statusColor = 'bg-rose-500/20 text-rose-400 border-rose-500/30';
+                let statusColor = 'bg-slate-500/10 text-slate-550 border-slate-500/20';
+                if (rem.status === 'Completed') statusColor = 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20';
+                if (rem.status === 'Pending') statusColor = 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20';
+                if (rem.status === 'Sent') statusColor = 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20';
+                if (rem.status === 'Failed') statusColor = 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20';
 
                 return (
                   <tr key={rem.id} className="border-b border-slate-200/20 dark:border-slate-800/20 hover:bg-slate-200/10 dark:hover:bg-slate-900/10 transition-colors">
@@ -438,16 +441,16 @@ export default function DashboardOverviewPage() {
                       <span className="font-medium">{rem.product_name}</span>
                       <span className="block text-[10px] text-slate-400">{rem.product_category}</span>
                     </td>
-                    <td className="py-4 font-semibold text-slate-500 dark:text-slate-400">
+                    <td className="py-4 font-semibold text-slate-550 dark:text-slate-400">
                       {new Date(rem.reminder_date).toLocaleDateString()}
                     </td>
                     <td className="py-4">
-                      <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold border ${priorityColor}`}>
+                      <span className={`px-2 py-1 rounded-lg text-[9px] font-extrabold uppercase tracking-wider ${priorityClass}`}>
                         {rem.customer_priority}
                       </span>
                     </td>
                     <td className="py-4">
-                      <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold border ${statusColor}`}>
+                      <span className={`px-2.5 py-1 rounded-lg text-[9px] font-extrabold uppercase tracking-wider border ${statusColor}`}>
                         {rem.status}
                       </span>
                     </td>

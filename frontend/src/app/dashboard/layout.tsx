@@ -135,7 +135,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         
         {/* Top Header Bar */}
-        <header className="glass-panel border-b border-slate-200/40 dark:border-slate-800/40 px-6 py-4 flex items-center justify-between gap-4 m-4 mb-2">
+        <header className="glass-panel-glow border-b border-slate-200/20 dark:border-slate-800/20 px-8 py-4.5 flex items-center justify-between gap-4 rounded-none border-t-0 border-x-0">
           <div className="flex items-center gap-4">
             <button className="md:hidden p-2 rounded-xl" onClick={() => setSidebarOpen(true)}>
               <Menu className="w-5 h-5" />
@@ -151,7 +151,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             {/* Theme switcher */}
             <button 
               onClick={toggleTheme} 
-              className="p-2.5 rounded-xl hover:bg-slate-200/50 dark:hover:bg-slate-800/40 border border-slate-200/30 dark:border-slate-800/30 transition-all"
+              className="p-2.5 rounded-xl hover:bg-slate-200/50 dark:hover:bg-slate-800/40 border border-slate-200/30 dark:border-slate-800/30 transition-all cursor-pointer"
             >
               {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-500" /> : <Moon className="w-4 h-4 text-indigo-600" />}
             </button>
@@ -168,7 +168,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </header>
 
         {/* Content body */}
-        <main className="flex-1 p-6 pt-2">
+        <main className="flex-1 p-8">
           {children}
         </main>
       </div>
