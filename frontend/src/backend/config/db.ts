@@ -1,29 +1,40 @@
 import { Pool } from 'pg';
 import sqlite3 from 'sqlite3';
 import path from 'path';
-import fs from 'fs';
 
 const usePostgres = !!process.env.DATABASE_URL;
+const isVercel = !!process.env.VERCEL;
 
 let pgPool: Pool | null = null;
 let sqliteDb: sqlite3.Database | null = null;
 
 if (usePostgres) {
+  console.log('Next.js DB: Connecting to PostgreSQL Database...');
   pgPool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+    ssl: { rejectUnauthorized: false }
   });
 } else {
-  // Store sqlite db at process.cwd() (the root of the running Next.js project)
-  const dbPath = path.resolve(process.cwd(), 'database.sqlite');
-  
-  sqliteDb = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-      console.error('Failed to connect to SQLite in Next.js:', err.message);
-    } else {
-      console.log(`SQLite database successfully connected at: ${dbPath}`);
-    }
-  });
+  if (isVercel) {
+    console.warn('Next.js DB: Vercel environment detected with no DATABASE_URL. Booting zero-config in-memory SQLite fallback...');
+    sqliteDb = new sqlite3.Database(':memory:', (err) => {
+      if (err) {
+        console.error('Failed to initialize in-memory SQLite:', err.message);
+      } else {
+        console.log('In-memory SQLite database successfully connected for Vercel preview.');
+      }
+    });
+  } else {
+    const dbPath = path.resolve(process.cwd(), 'database.sqlite');
+    console.log(`Next.js DB: Connecting to local persistent SQLite file at: ${dbPath}`);
+    sqliteDb = new sqlite3.Database(dbPath, (err) => {
+      if (err) {
+        console.error('Failed to connect to local SQLite:', err.message);
+      } else {
+        console.log('Local SQLite database successfully connected.');
+      }
+    });
+  }
 }
 
 function sqliteQuery(text: string, params: any[] = []): Promise<{ rows: any[]; rowCount: number }> {
