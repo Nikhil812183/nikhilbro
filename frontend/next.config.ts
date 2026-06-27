@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  serverExternalPackages: ['sqlite3']
+  serverExternalPackages: ['alasql']
 };
 
 export default nextConfig;
